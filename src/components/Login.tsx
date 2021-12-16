@@ -1,7 +1,10 @@
 import { FC } from 'react';
 import Image from 'next/image';
+import { useMoralis } from 'react-moralis';
 
 const Login: FC = () => {
+  const { authenticate } = useMoralis();
+
   return (
     <div className="bg-black relative">
       <h1>Login Screen</h1>
@@ -13,7 +16,9 @@ const Login: FC = () => {
           width={200}
           height={200}
         />
-        <button className="bg-yellow-500 rounded-lg p-5 font-bold animate-pulse">
+        <button
+          onClick={() => authenticate()}
+          className="bg-yellow-500 rounded-lg p-5 font-bold animate-pulse">
           Login to the METAVERSE
         </button>
       </div>

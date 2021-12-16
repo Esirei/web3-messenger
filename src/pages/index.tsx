@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import React from 'react';
+import { useMoralis } from 'react-moralis';
 import Login from '~/components/Login';
 
 export default function Home(): React.ReactElement {
-  const loggedIn = false;
+  const { isAuthenticated, logout } = useMoralis();
 
-  if (!loggedIn) {
+  if (!isAuthenticated) {
     return <Login />;
   }
 
@@ -17,6 +18,7 @@ export default function Home(): React.ReactElement {
       </Head>
 
       <h1>Welcome to the metaverse!</h1>
+      <button onClick={logout}>Log out</button>
     </div>
   );
 }
