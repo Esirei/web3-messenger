@@ -18,7 +18,9 @@ export default function Home(): React.ReactElement {
       </Head>
 
       <h1>Welcome to the metaverse!</h1>
-      <button onClick={logout}>Log out</button>
+      <button className="bg-yellow-500 rounded-lg p-5 py-3 font-bold" onClick={logout}>
+        Log out
+      </button>
     </div>
   );
 }
