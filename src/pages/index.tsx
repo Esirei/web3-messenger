@@ -23,10 +23,6 @@ export default function Home(): React.ReactElement {
         <Header />
         <Messages />
       </div>
-
-      <button className="bg-yellow-500 rounded-lg p-5 py-3 font-bold" onClick={logout}>
-        Log out
-      </button>
     </div>
   );
 }
