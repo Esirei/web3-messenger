@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useMoralis } from 'react-moralis';
 
 const ChangeUsername: FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { setUserData, isUserUpdating, userError, user } = useMoralis();
 
   function setUsername() {

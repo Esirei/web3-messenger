@@ -8,6 +8,7 @@ const MINS = 15;
 const Messages: FC = () => {
   const { user } = useMoralis();
   const endOfMessagesRef = useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { data, isLoading, error } = useMoralisQuery<MessageEntity>(
     'Messages',
     query =>
@@ -35,7 +36,7 @@ const Messages: FC = () => {
       </div>
 
       <div ref={endOfMessagesRef} className="text-center text-gray-400 mt-5">
-        <p>You're up to date {user.getUsername()}!</p>
+        <p>You&apos;re up to date {user.getUsername()}!</p>
       </div>
     </div>
   );
