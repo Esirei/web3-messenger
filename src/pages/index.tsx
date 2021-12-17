@@ -6,7 +6,7 @@ import Login from '~/components/Login';
 import Messages from '~/components/Messages';
 
 export default function Home(): React.ReactElement {
-  const { isAuthenticated, logout } = useMoralis();
+  const { isAuthenticated } = useMoralis();
 
   if (!isAuthenticated) {
     return <Login />;
