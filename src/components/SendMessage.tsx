@@ -15,8 +15,7 @@ const SendMessage: FC<Props> = ({ endOfMessagesRef }) => {
 
     if (!message) return;
 
-    const messages = new Moralis.Object<MessageEntity>('Messages', null, null);
-    messages
+    new Moralis.Object<MessageEntity>('Messages', null, null)
       .save({
         message,
         username: user.getUsername(),
