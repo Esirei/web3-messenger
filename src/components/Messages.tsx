@@ -8,7 +8,7 @@ const MINS = 15;
 const Messages: FC = () => {
   const { user } = useMoralis();
   const endOfMessagesRef = useRef<HTMLDivElement>(null);
-  const { data, loading, error } = useMoralisQuery<MessageEntity>(
+  const { data, isLoading, error } = useMoralisQuery<MessageEntity>(
     'Messages',
     query =>
       query
