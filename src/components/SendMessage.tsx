@@ -1,5 +1,6 @@
-import { FC, useState, MouseEvent, MutableRefObject } from 'react';
+import { FC, MouseEvent, MutableRefObject, useState } from 'react';
 import { useMoralis } from 'react-moralis';
+import { MessageEntity } from '~/types';
 
 interface Props {
   endOfMessagesRef: MutableRefObject<HTMLDivElement>;
@@ -14,14 +15,12 @@ const SendMessage: FC<Props> = ({ endOfMessagesRef }) => {
 
     if (!message) return;
 
-    // const m = new Moralis.Object();
-    const Messages = Moralis.Object.extend('Messages');
-    const messages = new Messages();
+    const messages = new Moralis.Object<MessageEntity>('Messages', null, null);
     messages
       .save({
         message,
         username: user.getUsername(),
-        ethAddress: user.get('ethAddress'),
+        ethAddress: user.get('ethAddress') as string,
       })
       .then(() => {
         setMessage('');
